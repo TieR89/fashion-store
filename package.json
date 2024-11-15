@@ -11,7 +11,7 @@
     "lint:prettier": "prettier --check .",
     "lint": "npm run lint:js && npm run lint:prettier",
     "lintfix": "prettier --write --list-different . && npm run lint:js -- --fix",
-    "deploy": "nuxt generate && git add dist && git commit -m 'Deploy to GitHub Pages' && git subtree push --prefix dist origin gh-pages"
+    "deploy": "nuxt generate && gh-pages -d dist"
   },
   "dependencies": {
     "@nuxt/static": "^1.0.0",
@@ -29,6 +29,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-nuxt": "^4.0.0",
     "eslint-plugin-vue": "^9.5.1",
+    "gh-pages": "^6.2.0",
     "prettier": "^2.7.1",
     "sass": "^1.80.7",
     "sass-loader": "^7.3.1",
