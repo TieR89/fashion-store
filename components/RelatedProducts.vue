@@ -24,10 +24,10 @@ export default {
   data() {
     return {
       products: [
-        { image: '/img/pic1.png', name: 'Платье', price: '14000' },
-        { image: '/img/pic2.png', name: 'Жакет', price: '8500' },
-        { image: '/img/pic3.png', name: 'Платье', price: '10500' },
-        { image: '/img/pic4.png', name: 'Комбинезон', price: '9500' },
+        { image: 'img/pic1.png', name: 'Платье', price: '14000' },
+        { image: 'img/pic2.png', name: 'Жакет', price: '8500' },
+        { image: 'img/pic3.png', name: 'Платье', price: '10500' },
+        { image: 'img/pic4.png', name: 'Комбинезон', price: '9500' },
       ],
     }
   },
@@ -46,11 +46,11 @@ export default {
 
   &__items {
     display: flex;
-    gap: 150px;
+    gap: 20px;
   }
 
   &__item {
-    width: 200px;
+    width: 333px;
     text-align: center;
   }
 

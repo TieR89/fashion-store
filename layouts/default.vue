@@ -3,33 +3,41 @@
     <header class="header">
       <div class="header__left">
         <button class="header__icon">
-          <img src="/img/ico-man.png" alt="man" class="header__icon-img" />
+          <img src="img/ico-man.png" alt="man" class="header__icon-img" />
         </button>
         <button class="header__icon">
-          <img src="/img/ico-search.png" alt="Search" class="header__icon-img" />
+          <img src="img/ico-search.png" alt="Search" class="header__icon-img" />
         </button>
       </div>
 
       <div class="header__logo">
-        <img src="/img/logo.png" alt="Logo" class="header__logo-img" />
+        <img src="img/logo.png" alt="Logo" class="header__logo-img" />
       </div>
 
       <div class="header__right">
         <button class="header__icon">
           <img
-            src="/img/ico-search.png"
+            src="img/ico-search.png"
             alt="Search"
             class="header__icon-img desktop-only"
           />
         </button>
         <button class="header__icon">
-          <img src="/img/ico-flag.png" alt="flag" class="header__icon-img desktop-only" />
+          <img
+            src="img/ico-flag.png"
+            alt="flag"
+            class="header__icon-img desktop-only"
+          />
         </button>
         <button class="header__icon">
-          <img src="/img/ico-man.png" alt="man" class="header__icon-img desktop-only" />
+          <img
+            src="img/ico-man.png"
+            alt="man"
+            class="header__icon-img desktop-only"
+          />
         </button>
         <button class="header__icon">
-          <img src="/img/ico-bag.png" alt="bag" class="header__icon-img" />
+          <img src="img/ico-bag.png" alt="bag" class="header__icon-img" />
         </button>
       </div>
     </header>
@@ -54,7 +62,7 @@
   }
 
   &__left {
-    display: none; 
+    display: none;
   }
 
   &__right {
@@ -85,14 +93,6 @@
       top: 30px;
       left: 50%;
       transform: translateX(-50%);
-    }
-
-    &__right {
-      display: flex;
-      gap: 15px;
-      .desktop-only {
-        display: block;
-      }
     }
   }
 

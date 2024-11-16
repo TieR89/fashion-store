@@ -48,10 +48,6 @@ export default {
     &__gallery {
       margin-bottom: 20px;
     }
-
-    &__info {
-      align-items: center;
-    }
   }
 }
 </style>

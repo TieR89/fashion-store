@@ -8,10 +8,15 @@
         <button
           v-for="size in sizes"
           :key="size.name"
-          :class="['product-info__size', { 'product-info__size--active': size.active }]"
+          :class="[
+            'product-info__size',
+            { 'product-info__size--active': size.active },
+          ]"
         >
           {{ size.label }}
-          <span v-if="size.note" class="product-info__note">{{ size.note }}</span>
+          <span v-if="size.note" class="product-info__note">{{
+            size.note
+          }}</span>
         </button>
       </div>
       <p class="product-info__color-label">Цвет: белый</p>
@@ -27,7 +32,14 @@
 
     <div class="product-info__actions">
       <button class="product-info__button">Добавить в корзину</button>
-      <button class="product-info__bookmark"></button>
+      <button class="product-info__bookmark">
+        <img
+          src="img/ico-flag.png"
+          alt="flag"
+          class="header__icon-img desktop-only"
+          width="24px"
+        />
+      </button>
     </div>
 
     <div class="product-info__details">
@@ -53,9 +65,9 @@ export default {
         { label: 'M', active: false, note: 'подписка' },
       ],
       colors: ['#FFFFFF', '#000000', '#D2B48C'],
-    };
+    }
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -102,12 +114,13 @@ export default {
   }
 
   &__color-label {
-    margin: 30px;
+    margin-top: 40px;
     top: 30px;
     font-size: 14px;
   }
 
   &__color {
+    margin-top: 15px;
     width: 28px;
     height: 28px;
     border: 1px solid #080808;
@@ -127,22 +140,66 @@ export default {
     border: none;
     cursor: pointer;
     width: 100%;
+    height: 44px;
   }
 
   &__bookmark {
-    width: 28px;
-    height: 28px;
-    background: url('/path/to/bookmark-icon.svg') no-repeat center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid #080808;
     background-size: contain;
-    border: none;
     cursor: pointer;
   }
 
   &__details {
     margin-top: 20px;
-
+    font-family: Arial, sans-serif;
+    width: 100%;
+    max-width: 400px;
     details {
+      border-bottom: 1px solid #ddd;
       margin-bottom: 10px;
+    }
+    summary {
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      list-style: none;
+
+      &::-webkit-details-marker {
+        display: none; // Убираем стандартный маркер
+      }
+
+      &::after {
+        content: '+';
+        font-size: 20px;
+        font-weight: normal;
+        margin-left: auto;
+        transition: transform 0.2s ease;
+      }
+    }
+
+    &[open] {
+      summary {
+        color: #000; // Цвет при открытии
+
+        &::after {
+          content: '-';
+          transform: rotate(90deg);
+        }
+      }
+    }
+
+    p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.5;
+      margin: 10px 0 0;
+      padding-bottom: 10px;
     }
   }
 }
