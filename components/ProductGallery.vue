@@ -24,7 +24,7 @@
 export default {
   data() {
     return {
-      images: ['img/picture.png'],
+      images: ['img/picture.png', 'img/picture-1.png', 'img/picture-2.png'],
       currentImage: 'img/picture.png',
     }
   },

@@ -36,28 +36,42 @@ export default {
 
 <style lang="scss" scoped>
 .related-products {
-  width: 1360px;
+  width: 100%;
   margin-top: 40px;
 
   &__title {
     font-size: 20px;
     margin-bottom: 20px;
+    text-align: center;
+    margin: 10px;
   }
 
   &__items {
-    display: flex;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); // 4 элемента
+    gap: 10px;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr); // 3 элемента
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr); // 2 элемента
+    }
+
+    @media (max-width: 375px) {
+      grid-template-columns: 1fr; // 1 элемент
+    }
   }
 
   &__item {
-    width: 333px;
     text-align: center;
   }
 
   &__image {
-    display: flex;
-    width: 333px;
-    height: 444px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
   }
 
   &__name {
@@ -70,4 +84,5 @@ export default {
     color: #333;
   }
 }
+
 </style>
